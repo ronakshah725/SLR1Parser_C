@@ -1,0 +1,9 @@
+{ = d 123}
+
+{ = c 1 }
+{ = fac 1 }
+{ loop d
+    {   = fac { * fac c } }
+    {   = c {+c1} }
+} {print fac}
+
