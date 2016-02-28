@@ -9,17 +9,18 @@ import java_cup.runtime.*;
 %class Scanner
 %implements mySym
 
-%unicode
+
 
 %line
 %column
 
 %cup
+%cupdebug
 
 
 %{
   StringBuilder string = new StringBuilder();
-  
+ 
   private Symbol symbol(int type) {
     return new JavaSymbol(type, yyline+1, yycolumn+1);
   }
