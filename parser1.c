@@ -7,6 +7,41 @@ extern char* yytext;
 
 
 
+void printTokens(int ntoken)
+{
+    //todo
+		  switch (ntoken) {
+                  
+              case LBRACE:printf("lb ");break;
+                  
+              case RBRACE:printf("rb ");break;
+                  
+              case IDENTIFIER:
+                  printf("x ");
+                  break;
+                  
+              case PRINT:
+                  printf("p ");break;
+                  break;
+              case LOOP:
+                  printf("l ");break;
+                  break;
+              case FUNCTION:
+                  printf("f ");
+                  break;
+              case ASSIGN:
+                  
+                  printf("= ");
+                  break;
+                  
+              case NUMBER:
+                  printf("n ");
+                  break;
+              default:
+                  printf("Syntax error in line %d\n",yylineno);
+          }
+}
+
 int main(void)
 {
 
@@ -16,37 +51,7 @@ int main(void)
 	while(ntoken) {
 
 
-        //todo
-		switch (ntoken) {
-
-		case LBRACE:printf("lb ");break;
-
-		case RBRACE:printf("rb ");break;
-
-		case IDENTIFIER:
-			printf("x ");
-			break;
-
-		case PRINT:
-			printf("p ");break;
-			break;
-		case LOOP:
-			printf("l ");break;
-			break;
-		case FUNCTION:
-			printf("f ");
-			break;
-		case ASSIGN:
-
-			printf("= ");
-			break;
-  
-		case NUMBER:
-			printf("n ");
-			break;
-		default:
-			printf("Syntax error in line %d\n",yylineno);
-		}
+        printTokens(ntoken);
 		ntoken = yylex();
 	}
 	return 0;
