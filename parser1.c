@@ -16,7 +16,7 @@ int main(void)
 	while(ntoken) {
 
 
-
+        //todo
 		switch (ntoken) {
 
 		case LBRACE:printf("lb ");break;
