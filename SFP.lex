@@ -22,7 +22,7 @@ loop					        return LOOP;
 "+"             		return FUNCTION;
 "*"             		return FUNCTION;
 [a-z]+          		return IDENTIFIER;
-
+<<EOF>>                 return EOF;
 .              			printf(" INVALID CHARACTER  %s IN LINE %d \n",yytext,  yylineno);
 
 %%
