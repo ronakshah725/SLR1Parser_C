@@ -45,7 +45,7 @@ void printTokens(int ntoken)
 int main(void)
 {
 
-	int ntoken, vtoken;
+	int ntoken;
 
 	ntoken = yylex();
 	while(ntoken) {
