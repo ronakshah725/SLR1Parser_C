@@ -7,7 +7,7 @@ extern char* yytext;
 
 
 
-int main(void) 
+int main(void)
 {
 
 	int ntoken, vtoken;
@@ -16,32 +16,34 @@ int main(void)
 	while(ntoken) {
 
 
-		
+
 		switch (ntoken) {
 
-		case LBRACE:printf(" LBRACE\n");break;
+		case LBRACE:printf("lb ");break;
 
-		case RBRACE:printf(" RBRACE\n");break;
+		case RBRACE:printf("rb ");break;
 
 		case IDENTIFIER:
-			printf("ID : %s\n", yytext);
+			printf("x ");
 			break;
-		
+
 		case PRINT:
-			printf(" PRINT\n");break;
+			printf("p ");break;
 			break;
 		case LOOP:
-			printf(" LOOP\n");break;
+			printf("l ");break;
 			break;
 		case FUNCTION:
-			printf("FUNCTION : %s\n", yytext);
+			printf("f ");
 			break;
 		case ASSIGN:
-			printf("ASSIGN \n");
+
+			printf("= ");
 			break;
+  
 		case NUMBER:
-			printf("NUMBER : %s\n", yytext);
-			break;		
+			printf("n ");
+			break;
 		default:
 			printf("Syntax error in line %d\n",yylineno);
 		}
@@ -63,4 +65,3 @@ int main(void)
   // #define LOOP 102
   // #define PRINT 103
   // #define NUMBER 104
-

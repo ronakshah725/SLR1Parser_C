@@ -6,5 +6,3 @@
     {   = fac { * fac c } }
     {   = c {+c-1} }
 } {print fac}
-
-uy )()
