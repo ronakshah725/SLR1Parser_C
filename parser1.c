@@ -1,9 +1,13 @@
 #include <stdio.h>
+#include <string.h>
 #include "symbols.h"
 
 extern int yylex();
 extern int yylineno;
 extern char* yytext;
+
+#define row 50
+#define col 16
 
 
 
@@ -12,14 +16,13 @@ void printTokens(int ntoken)
     //todo
 		  switch (ntoken) {
                   
-              case LBRACE:printf("lb ");break;
-                  
-              case RBRACE:printf("rb ");break;
-                  
+              case LBRACE:
+                  printf("lb ");break;
+              case RBRACE:
+                  printf("rb ");break;
               case IDENTIFIER:
                   printf("x ");
                   break;
-                  
               case PRINT:
                   printf("p ");break;
                   break;
@@ -30,16 +33,55 @@ void printTokens(int ntoken)
                   printf("f ");
                   break;
               case ASSIGN:
-                  
                   printf("= ");
                   break;
-                  
               case NUMBER:
                   printf("n ");
                   break;
               default:
                   printf("Syntax error in line %d\n",yylineno);
           }
+}
+
+
+char* getValueFromMatrix(int state, int symbol, char** x) {
+    
+    int val = (state-1)*15 + symbol;  //see formula_helper.txt
+    
+    return x[val];
+    
+    //printf("(%d,%d)  =  %s  ,val = %d",symbol,state,x[val], val);
+}
+
+void read_table(FILE* fp){
+    
+
+    char x[row][col];
+    char buf[300];
+    fp = fopen("sample2.pt","r");
+    
+    int i = 0;
+    size_t n;
+    fgets(buf,sizeof(buf),fp);
+    
+    while(fgets(buf,sizeof(buf),fp))
+    {
+        char *p = strtok(buf,"\t");
+        while( p != NULL)
+        {
+            n = strlen(p);
+            if(i>= row && n> col)
+                break;
+            strcpy(x[i],p);
+            i++;
+            p = strtok(NULL,"\t");
+        }
+    }
+    int st, sy; //state and symbol
+    st = 6, sy = DOLLAR;
+    int val = (st-1)*15 + sy;  //see formula_helper.txt
+    printf("(%d,%d)  =  %s  ,val = %d",st,sy,x[val], val);
+   
 }
 
 void start_parser(void)
@@ -51,7 +93,7 @@ void start_parser(void)
     while(ntoken!=EOF) {
         
         
-        printTokens(ntoken);
+        //printTokens(ntoken);
         ntoken = yylex();
     }
      printf("$\nThanks!!");
@@ -66,45 +108,24 @@ int main(int argc, char *argv[] )
     }
     else
     {
-        // We assume argv[1] is a filename to open
         FILE *file = fopen( argv[1], "r" );
-        
-        /* fopen returns 0, the NULL pointer, on failure */
         if ( file == 0 )
         {
             printf( "Could not open file\n" );
         }
         else
         {
-            int x;
-            /* read one character at a time from file, stopping at EOF, which
-             indicates the end of the file.  Note that the idiom of "assign
-             to a variable, check the value" used below works because
-             the assignment statement evaluates to the value assigned. */
-            while  ( ( x = fgetc( file ) ) != EOF )
-            {
-                printf( "%c", x );
-            }
-            fclose( file );
+            read_table(file);
         }
     }
 
-    //readTable();
+    
     
     start_parser();
 	return 0;
 }
 
 
-  // #define IDENTIFIER 98
-  // #define RBRACE 17
-  // #define LBRACE 16
-  // #define ASSIGN 18
-  // #define PLUS 60
-  // #define MULT 14
-  // #define MINUS 61
-  // #define ERROR 1
-  // #define FUNCTION 101
-  // #define LOOP 102
-  // #define PRINT 103
-  // #define NUMBER 104
+
+
+
