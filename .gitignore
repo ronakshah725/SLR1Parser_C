@@ -1,3 +1,4 @@
 ~$*
 helper/
 *.pdf
+*.dSYM/

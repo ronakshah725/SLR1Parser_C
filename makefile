@@ -1,5 +1,5 @@
 p1: lex.yy.o
-		gcc parser1.c lex.yy.o -o cfp.exe -ll
+		gcc -g -Wall parser1.c lex.yy.o -o cfp.exe -ll
 
 lex.yy.o: lex.yy.c 
 

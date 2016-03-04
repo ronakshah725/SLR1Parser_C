@@ -44,7 +44,7 @@ void printTokens(int ntoken)
 }
 
 
-char* getValueFromMatrix(int state, int symbol, char** x) {
+char* getValueFromMatrix(int state, int symbol, char x[row][col]) {
     
     int val = (state-1)*15 + symbol;  //see formula_helper.txt
     
@@ -80,7 +80,8 @@ void read_table(FILE* fp){
     int st, sy; //state and symbol
     st = 6, sy = DOLLAR;
     int val = (st-1)*15 + sy;  //see formula_helper.txt
-    printf("(%d,%d)  =  %s  ,val = %d",st,sy,x[val], val);
+    char* va = getValueFromMatrix(st, sy, x);
+    printf("(%d,%d)  =  %s  ,val = %s",st,sy,x[val], va);
    
 }
 
