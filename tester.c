@@ -10,7 +10,7 @@
 #include <string.h>
 #include "symbols.h"
 
-//TODO
+
 char* getValueFromMatrix(int state, int symbol, char* x[]) {
     
     int val = (state-1)*15 + symbol;  //see formula_helper.txt

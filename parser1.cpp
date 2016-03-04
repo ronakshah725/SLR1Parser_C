@@ -17,15 +17,18 @@ extern char* yytext;
 #define col 16
 #define MAX_STATES 24
 #define MAX_SYMBOLS 14
+#define shift 55
+#define reduce 77
 
 stack<string> s;
+char tokens[] = {'{',	'}',	'l',	'p',	'=',	'f',	'n',	'x',	'$',	'P',	'T',	'S',	'R',	'C'};
 
 
 
 
 void printTokens(int ntoken)
 {
-    //todo
+    
 		  switch (ntoken) {
                   
               case LBRACE:
@@ -56,14 +59,35 @@ void printTokens(int ntoken)
 }
 
 
-int getValueFromMatrix(int state, int symbol) {
+int getValueFromMatrix(int state, int token) {
     
-    int val = (state-1)*15 + symbol;  //see formula_helper.txt
+    int val = (state-1)*15 + token;  //see formula_helper.txt
     
     return val;
     
-    //printf("(%d,%d)  =  %s  ,val = %d",symbol,state,x[val], val);
+    //printf("(%d,%d)  =  %s  ,val = %d",token,state,x[val], val);
 }
+
+char* getActionString(int state, int token, char x[row][col]) {
+    
+    return x[getValueFromMatrix(state, token)];
+    
+    //    printf("(%d,%d)  =  %s  ,val = %d",token,state,x[val], val);
+}
+
+int getAction(int state, int token, char x[row][col]){
+    
+    char* actionString = getActionString(state, token, x);
+    
+    if(isdigit(*actionString))
+        return shift;
+    else if (isalpha(*actionString))
+        return reduce;
+    else
+        return -100;
+}
+
+
 
 void read_table(FILE* fp, char x[row][col]){
     
@@ -86,7 +110,7 @@ void read_table(FILE* fp, char x[row][col]){
             p = strtok(NULL,"\t");
         }
     }
-    int st, sy; //state and symbol
+    int st, sy; //state and token
     st = 24, sy = LBRACE;
     int va = getValueFromMatrix(st, sy);
     
@@ -97,20 +121,64 @@ void read_table(FILE* fp, char x[row][col]){
    
 }
 
-void start_parser(void)
+int getToken(void)
 {
-    int ntoken;
+    return yylex();
     
-    ntoken = yylex();
     
-    while(ntoken!=EOF) {
-        
-        
-        //printTokens(ntoken);
-        ntoken = yylex();
-    }
-     printf("$\nThanks!!");
+    //
+    //    while(ntoken!=EOF) {
+    //        ntoken = yylex();
+    //        int accepted = slr(x, ntoken);
+    //    }
+    //
+    //
+    //
+    //    printf("$\nThanks!!");
 }
+
+bool continueparsing(){
+    return true;
+}
+/////TODO
+int slr(char x[row][col]){
+    
+    int accepted = 0;
+    int token = getToken();
+    int state = 1;
+    int action = getAction(state, token, x);
+    
+    while(continueparsing()){
+        
+        if (action==shift){
+            
+        }
+        else if (action == reduce){
+            
+        }
+        
+        //update action
+        
+        //update state
+        
+        //update token
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    //initialize stack to 1st state
+//
+    
+    
+    return accepted;
+}
+
+
 
 void print_table_to_console(char x[row][col]){
     
@@ -123,22 +191,13 @@ void print_table_to_console(char x[row][col]){
 }
 
 
+
 void run(char x[row][col], FILE *file)
 {
     read_table(file,x);
-    //start_parser();
     print_table_to_console(x);
-    
-    s.push("A");
-    s.push("B");
-    s.push("C");
-    s.push("D");
-    
-    cout << "Stack pop = " << s.top() << endl;
-    
-//    for(int i = 0; i< row; i++){
-//        printf("%d :%s\n",i,x[i]);
-//    }
+    int accepted = slr(x);
+    printf("String parsed : %d",accepted);
 }
 
 int main(int argc, char *argv[] )
@@ -164,7 +223,11 @@ int main(int argc, char *argv[] )
  return 0;
 }
 
+//PRINT HELPER
 
+////    for(int i = 0; i< row; i++){
+//        printf("%d :%s\n",i,x[i]);
+//    }
 
 
 
