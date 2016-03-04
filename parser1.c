@@ -6,8 +6,12 @@ extern int yylex();
 extern int yylineno;
 extern char* yytext;
 
+
 #define row 50
 #define col 16
+#define MAX_STATES 3
+#define MAX_SYMBOLS 14
+
 
 
 
@@ -44,22 +48,19 @@ void printTokens(int ntoken)
 }
 
 
-char* getValueFromMatrix(int state, int symbol, char x[row][col]) {
+int getValueFromMatrix(int state, int symbol) {
     
     int val = (state-1)*15 + symbol;  //see formula_helper.txt
     
-    return x[val];
+    return val;
     
     //printf("(%d,%d)  =  %s  ,val = %d",symbol,state,x[val], val);
 }
 
-void read_table(FILE* fp){
+void read_table(FILE* fp, char x[row][col]){
     
-
-    char x[row][col];
     char buf[300];
     fp = fopen("sample2.pt","r");
-    
     int i = 0;
     size_t n;
     fgets(buf,sizeof(buf),fp);
@@ -79,9 +80,12 @@ void read_table(FILE* fp){
     }
     int st, sy; //state and symbol
     st = 6, sy = DOLLAR;
-    int val = (st-1)*15 + sy;  //see formula_helper.txt
-    char* va = getValueFromMatrix(st, sy, x);
-    printf("(%d,%d)  =  %s  ,val = %s",st,sy,x[val], va);
+    int va = getValueFromMatrix(st, sy);
+    
+    //HELPER extract first char from string
+    printf("First Charecter : (%d,%d)  =  %c\n",st,sy, *x[va]);
+    printf("String : (%d,%d)  =  %s\n",st,sy,x[va]);
+    
    
 }
 
@@ -100,6 +104,24 @@ void start_parser(void)
      printf("$\nThanks!!");
 }
 
+void print_table_to_console(char x[row][col]){
+    
+    for (int st=1; st<=MAX_STATES; st++) {
+        for (int sy = 1; sy<=MAX_SYMBOLS; sy++) {
+            printf("%s\t",x[getValueFromMatrix(st, sy)]);
+        }
+        printf("\n");
+    }
+}
+
+
+void run(char x[row][col], FILE *file)
+{
+    read_table(file,x);
+    //start_parser();
+    print_table_to_console(x);
+}
+
 int main(int argc, char *argv[] )
 {
     if ( argc != 2 ) /* argc should be 2 for correct execution */
@@ -109,6 +131,7 @@ int main(int argc, char *argv[] )
     }
     else
     {
+        char x[row][col];
         FILE *file = fopen( argv[1], "r" );
         if ( file == 0 )
         {
@@ -116,15 +139,14 @@ int main(int argc, char *argv[] )
         }
         else
         {
-            read_table(file);
+            run(x, file);
         }
     }
-
-    
-    
-    start_parser();
-	return 0;
+ return 0;
 }
+
+
+
 
 
 
