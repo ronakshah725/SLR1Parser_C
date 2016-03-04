@@ -1,0 +1,10 @@
+P -> T
+T -> S T
+T -> S
+S -> lb = x R rb
+S -> lb l x T rb
+S -> lb p R rb
+R -> C
+R -> x
+R -> n
+C -> lb f R R rb 

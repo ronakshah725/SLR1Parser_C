@@ -1,16 +1,24 @@
 #include <stdio.h>
 #include <string.h>
+#include <stack>
+#include <iostream>
+
+
 #include "symbols.h"
+
+using namespace std;
 
 extern int yylex();
 extern int yylineno;
 extern char* yytext;
 
 
-#define row 50
+#define row 500
 #define col 16
-#define MAX_STATES 3
+#define MAX_STATES 24
 #define MAX_SYMBOLS 14
+
+stack<string> s;
 
 
 
@@ -60,7 +68,7 @@ int getValueFromMatrix(int state, int symbol) {
 void read_table(FILE* fp, char x[row][col]){
     
     char buf[300];
-    fp = fopen("sample2.pt","r");
+    
     int i = 0;
     size_t n;
     fgets(buf,sizeof(buf),fp);
@@ -79,7 +87,7 @@ void read_table(FILE* fp, char x[row][col]){
         }
     }
     int st, sy; //state and symbol
-    st = 6, sy = DOLLAR;
+    st = 24, sy = LBRACE;
     int va = getValueFromMatrix(st, sy);
     
     //HELPER extract first char from string
@@ -120,6 +128,17 @@ void run(char x[row][col], FILE *file)
     read_table(file,x);
     //start_parser();
     print_table_to_console(x);
+    
+    s.push("A");
+    s.push("B");
+    s.push("C");
+    s.push("D");
+    
+    cout << "Stack pop = " << s.top() << endl;
+    
+//    for(int i = 0; i< row; i++){
+//        printf("%d :%s\n",i,x[i]);
+//    }
 }
 
 int main(int argc, char *argv[] )

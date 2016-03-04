@@ -7,7 +7,11 @@
 #define NUMBER 7
 #define IDENTIFIER 8
 #define DOLLAR 9
-
+#define P 10
+#define T 11
+#define S 12
+#define R 13
+#define C 14
 #define ERROR 100
   
 
