@@ -53,6 +53,9 @@ void printTokens(int ntoken)
               case NUMBER:
                   printf("n ");
                   break;
+              case DOLLAR:
+                  printf("$");
+                  break;
               default:
                   printf("Syntax error in line %d\n",yylineno);
           }
@@ -68,16 +71,15 @@ int getValueFromMatrix(int state, int token) {
     //printf("(%d,%d)  =  %s  ,val = %d",token,state,x[val], val);
 }
 
-char* getActionString(int state, int token, char x[row][col]) {
+char* getVal(int state, int token, char x[row][col]) {
     
     return x[getValueFromMatrix(state, token)];
-    
-    //    printf("(%d,%d)  =  %s  ,val = %d",token,state,x[val], val);
+
 }
 
 int getAction(int state, int token, char x[row][col]){
     
-    char* actionString = getActionString(state, token, x);
+    char* actionString = getVal(state, token, x);
     
     if(isdigit(*actionString))
         return shift;
@@ -121,57 +123,66 @@ void read_table(FILE* fp, char x[row][col]){
    
 }
 
-int getToken(void)
-{
+int getToken(void){
     return yylex();
-    
-    
-    //
-    //    while(ntoken!=EOF) {
-    //        ntoken = yylex();
-    //        int accepted = slr(x, ntoken);
-    //    }
-    //
-    //
-    //
-    //    printf("$\nThanks!!");
 }
 
-bool continueparsing(){
-    return true;
+
+
+int getSym(char sym){
+    for (int i = 0; i<=MAX_SYMBOLS; i++)
+        if(tokens[i] == sym)
+            return i+1;
+    return -1;
 }
+
+char*t toString(int x){
+    
+    char t[1];
+    sprintf(t,"%d", x);
+    return t;
+    
+}
+
 /////TODO
 int slr(char x[row][col]){
     
     int accepted = 0;
     int token = getToken();
     int state = 1;
-    int action = getAction(state, token, x);
+
+    s.push(toString(x));
     
-    while(continueparsing()){
-        
-        if (action==shift){
-            
-        }
-        else if (action == reduce){
-            
-        }
-        
-        //update action
-        
-        //update state
-        
-        //update token
-        
-        
-        
-        
-        
-    }
+    int method = getAction(state, token, x);
+    char* action = getVal(state, token,x);
+    printf("top : %s\n",s.top().c_str());
     
     
-    
-    //initialize stack to 1st state
+//    while(){
+//        
+//        if (method==shift){
+//            s.push()
+//            
+//        }
+//        else if (method == reduce){
+//            
+//        }
+//        
+//        //update action
+//        
+//        //update state
+//        
+//        //update token
+//        
+//        
+//        
+//        
+//        
+//    }
+//    
+//    
+//    
+//    //initialize stack to 1st state
 //
     
     
@@ -200,6 +211,21 @@ void run(char x[row][col], FILE *file)
     printf("String parsed : %d",accepted);
 }
 
+void start_parser(void)
+{
+    int ntoken;
+    
+    ntoken = yylex();
+    
+    while(ntoken!=DOLLAR) {
+        
+        
+        printTokens(ntoken);
+        ntoken = yylex();
+    }
+    printf("$\nThanks!!");
+}
+
 int main(int argc, char *argv[] )
 {
     if ( argc != 2 ) /* argc should be 2 for correct execution */
@@ -217,6 +243,7 @@ int main(int argc, char *argv[] )
         }
         else
         {
+//            start_parser();
             run(x, file);
         }
     }
