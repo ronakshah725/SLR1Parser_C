@@ -2,3 +2,5 @@
 helper/
 *.pdf
 *.dSYM/
+*.exe
+lex.yy.*
