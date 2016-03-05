@@ -23,7 +23,7 @@ loop					        return LOOP;
 "*"             		return FUNCTION;
 [a-z]+          		return IDENTIFIER;
 <<EOF>>                 {
-                            yyterminate();
+                            
                             return DOLLAR;
                         }
 .              			printf(" INVALID CHARACTER  %s IN LINE %d \n",yytext,  yylineno);

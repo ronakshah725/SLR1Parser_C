@@ -1,5 +1,5 @@
 
-run: p1 sample2.pt sample.sfp
+run: p1 
 		./cfp.exe mytab.pt < sample.sfp
 
 p1: lex.yy.c

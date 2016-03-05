@@ -3,6 +3,8 @@
 #include <stack>
 #include <iostream>
 #include <stdlib.h>
+#include <fstream>
+
 
 
 #include "symbols.h"
@@ -16,20 +18,25 @@ extern char* yytext;
 
 #define row 500
 #define col 16
-#define MAX_STATES 24
+
 #define MAX_SYMBOLS 14
 #define shift 55
 #define reduce 77
 
 stack<string> s;
-char tokens[] = {'{',	'}',	'l',	'p',	'=',	'f',	'n',	'x',	'$',	'P',	'T',	'S',	'R',	'C'};
+int tokIndex =0;
+int MAX_STATES = 0;
+
+
+char tokens[] = {'#','{',	'}',	'l',	'p',	'=',	'f',	'n',	'x',	'$',	'P',	'T',	'S',	'R',	'C'};
+
 
 
 
 
 void printTokens(int ntoken)
 {
-    
+    //todo
 		  switch (ntoken) {
                   
               case LBRACE:
@@ -54,30 +61,26 @@ void printTokens(int ntoken)
               case NUMBER:
                   printf("n ");
                   break;
-              case DOLLAR:
-                  printf("$");
-                  break;
               default:
                   printf("Syntax error in line %d\n",yylineno);
           }
 }
 
 
-int getValueFromMatrix(int state, int token) {
+int getValueFromMatrix(int state, int symbol) {
     
-    int val = (state-1)*15 + token;  //see formula_helper.txt
+    int val = (state-1)*15 + symbol;  //see formula_helper.txt
     
     return val;
     
-    //printf("(%d,%d)  =  %s  ,val = %d",token,state,x[val], val);
+    //printf("(%d,%d)  =  %s  ,val = %d",symbol,state,x[val], val);
 }
 
 char* getVal(int state, int token, char x[row][col]) {
     
     return x[getValueFromMatrix(state, token)];
-
+    
 }
-
 int getAction(int state, int token, char x[row][col]){
     
     char* actionString = getVal(state, token, x);
@@ -90,8 +93,6 @@ int getAction(int state, int token, char x[row][col]){
         return -100;
 }
 
-
-
 void read_table(FILE* fp, char x[row][col]){
     
     char buf[300];
@@ -99,6 +100,9 @@ void read_table(FILE* fp, char x[row][col]){
     int i = 0;
     size_t n;
     fgets(buf,sizeof(buf),fp);
+    printf("\t\t\t\t\t\t------------TABLE----------\n\n");
+    puts(buf);
+         printf("\n");
     
     while(fgets(buf,sizeof(buf),fp))
     {
@@ -112,16 +116,8 @@ void read_table(FILE* fp, char x[row][col]){
             i++;
             p = strtok(NULL,"\t");
         }
-        printf("done");
     }
-//    int st, sy; //state and token
-//    st = 1, sy = LBRACE;
-//    int va = getValueFromMatrix(st, sy);
-//    
-//    //HELPER extract first char from string
-//    printf("First Charecter : (%d,%d)  =  %c\n",st,sy, *x[va]);
-//    printf("Stringdw : (%d,%d)  =  %s\n",st,sy,x[va]);
-//    printf("Ended");
+
     
    
 }
@@ -135,34 +131,32 @@ int getToken(void){
 int getSym(char sym){
     for (int i = 0; i<=MAX_SYMBOLS; i++)
         if(tokens[i] == sym)
-            return i+1;
+            return i;
     return -1;
 }
 
 
-/////TODO
 int slr(char x[row][col]){
     
+    
     int accepted = 0;
-    printf("in slr");
     int token = getToken();
     int state = 1;
-
-
     s.push(to_string(state));
-    
     int method = getAction(state, token, x);
     int val = getValueFromMatrix(state, token);
     string action = "";
     method = getAction(state, token, x);
     action = x[val];
+    int i = 0;
     
     
-    while(action!="0" && action!="9999"){
-
+    while(action!="0" || action!="9999"){
+    
         if (method==shift){
-            s.push(to_string(getSym(token)));
-            s.push(to_string(state));
+            s.push(string(1,tokens[token]));
+            
+            s.push(action);
             token = getToken();
             
         }
@@ -178,45 +172,62 @@ int slr(char x[row][col]){
             int gotostate = stoi(s.top());
             int sy = getSym(nt);
             int gotoval = getValueFromMatrix(gotostate, sy);
-            s.push(to_string(nt));
+            s.push(string(1,nt));
             s.push(x[gotoval]);
         }
-
         
-
+        
+        
         state = stoi(s.top());
         method = getAction(state, token, x);
+        val = getValueFromMatrix(state, token);
         action = x[val];
-     
+        i++;
+        if(action=="9999"){
+            break;
+        }
+        
     }
     
     if(action=="0")
         accepted =-1;
     else if(action=="9999")
         accepted = 1;
-        
     
-    
-    
-    //initialize stack to 1st state
+   
 
+    
     
     
     return accepted;
-}
 
-
-
-void print_table_to_console(char x[row][col]){
     
-    for (int st=1; st<=MAX_STATES; st++) {
-        for (int sy = 1; sy<=MAX_SYMBOLS; sy++) {
-            printf("%s\t",x[getValueFromMatrix(st, sy)]);
-        }
-        printf("\n");
-    }
-    printf("done printing");
+    
+
 }
+
+
+int states(string fname) {
+    int number_of_lines = 0;
+    string line;
+    ifstream myfile(fname);
+    
+    while (std::getline(myfile, line))
+        ++number_of_lines;
+    
+    return number_of_lines;
+    
+}
+
+
+
+
+
+
+
+
+
+
 void start_parser(void)
 {
     int ntoken;
@@ -226,25 +237,48 @@ void start_parser(void)
     while(ntoken!=DOLLAR) {
         
         
-        printTokens(ntoken);
+        //printTokens(ntoken);
+        printf("%d ",ntoken);
         ntoken = yylex();
     }
-    printf("$\nThanks!!");
+
+}
+
+void print_table_to_console(char x[row][col]){
+    
+    
+    
+    printf("\t");
+    for (int st=1; st<=MAX_STATES; st++) {
+        for (int sy = 1; sy<=MAX_SYMBOLS; sy++) {
+            printf("%s\t",x[getValueFromMatrix(st, sy)]);
+        }
+        printf("\n");
+        printf("\t");
+
+    }
+
+
 }
 
 
 void run(char x[row][col], FILE *file)
 {
+
     read_table(file,x);
-    //print_table_to_console(x);
-    printf("String parsed : %d",12);
-    int accepted ;
-    slr(x);
+    print_table_to_console(x);
     
+
+    int accepted = slr(x);
     
+    if(accepted==1)
+            printf("\nProgram parsed successfully!!\n\n");
+    else
+         printf("\nProgram parsed successfully!!\n\n");
+    
+
+
 }
-
-
 
 int main(int argc, char *argv[] )
 {
@@ -257,25 +291,23 @@ int main(int argc, char *argv[] )
     {
         char x[row][col];
         FILE *file = fopen( argv[1], "r" );
+        MAX_STATES = states(argv[1]);
+        MAX_STATES -= 2;
+
         if ( file == 0 )
         {
             printf( "Could not open file\n" );
         }
         else
         {
-//            start_parser();
+            //start_parser();
             run(x, file);
-
         }
     }
  return 0;
 }
 
-//PRINT HELPER
 
-////    for(int i = 0; i< row; i++){
-//        printf("%d :%s\n",i,x[i]);
-//    }
 
 
 
