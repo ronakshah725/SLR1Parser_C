@@ -1,0 +1,666 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pr",
+				"printOdd"
+			],
+			[
+				"prin",
+				"printOdd"
+			],
+			[
+				"su",
+				"sumIntsFromFile"
+			],
+			[
+				"S",
+				"String"
+			],
+			[
+				"mu",
+				"mult"
+			],
+			[
+				"mul",
+				"multTable"
+			],
+			[
+				"fo",
+				"fore	for (each)"
+			],
+			[
+				"co",
+				"courseID"
+			],
+			[
+				"cou",
+				"courses"
+			],
+			[
+				"ph",
+				"phoneNumber"
+			],
+			[
+				"is",
+				"isEmpty"
+			],
+			[
+				"St",
+				"StringBuffer"
+			],
+			[
+				"ca",
+				"capacity"
+			],
+			[
+				"F",
+				"FileInputStream"
+			],
+			[
+				"In",
+				"Integer"
+			],
+			[
+				"r",
+				"randRange"
+			],
+			[
+				"arr",
+				"arraycopy"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"a",
+				"arraycopy"
+			],
+			[
+				"aC",
+				"aCopy"
+			],
+			[
+				"in",
+				"int"
+			],
+			[
+				"for",
+				"for	for"
+			],
+			[
+				"merge",
+				"mergeSort"
+			],
+			[
+				"pa",
+				"param	@param"
+			],
+			[
+				"n",
+				"numArr"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"e",
+				"Exception"
+			],
+			[
+				"ma",
+				"maxSize"
+			],
+			[
+				"s",
+				"size"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"da",
+				"date_accepted"
+			],
+			[
+				"cl",
+				"client_id"
+			],
+			[
+				"order",
+				"order_id"
+			],
+			[
+				"com",
+				"commission_type"
+			],
+			[
+				"rol",
+				"role_id"
+			],
+			[
+				"trade",
+				"trader_id"
+			],
+			[
+				"fli",
+				"flight_time"
+			],
+			[
+				"flight",
+				"flight_number"
+			],
+			[
+				"tab",
+				"tableClass"
+			],
+			[
+				"ta",
+				"tableClass"
+			],
+			[
+				"to",
+				"toggle_block"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"h",
+				"h3	Tag"
+			],
+			[
+				"se",
+				"section	Tag"
+			],
+			[
+				"paddi",
+				"padding-right"
+			],
+			[
+				"he",
+				"header	Tag"
+			],
+			[
+				"list",
+				"listOfFiles"
+			],
+			[
+				"get",
+				"getBytes"
+			],
+			[
+				"ch",
+				"checkPoints_B"
+			]
+		]
+	},
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Java/JavaC.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 232.0,
+		"last_filter": "pack",
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"list ",
+				"Package Control: List Packages"
+			],
+			[
+				"",
+				"Package Control: List Packages"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"svn",
+				"SVN: Diff"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/helper/jsmachines/js/lrparseview.js",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/out",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/helper/jsmachines/.parser.y.swp",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/helper/jsmachines/SLR_parser.docx",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p2/p2/tab_awk.txt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p2/p2/out",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p2/p2/mytab.pt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/helper/jsmachines/slr.html",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/helper/jsmachines/.DS_Store",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/helper/jsmachines/scanner.l",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/helper/jsmachines/parser.y",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p2/p2/Copy of table.csv",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p2/p2/sfp.grammar",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p2/p2/grammar",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p22/p22/makefile",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p2/p2/makefile",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p22/p22/untitled folder/parser1.c",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p22/p22/untitled folder/cpp.sublime-workspace",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p22/p22/untitled folder/symbols.h",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p22/p22/untitled folder/sample2.pt",
+		"/Users/ronakshahmac/Dropbox/utd/resume/latest/HELPER.txt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p22/p22/formula_helper.txt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p22/p22/symbols.h",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p22/p22/sample2.pt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p22/p22/sample.pt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p22/p22/try.out",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p2/sample.sfp",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/p2/p2/sample.sfp.out",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jsmachines/js/lrclosuretable.js",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jsmachines/slr.html",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jsmachines/js/lrtable.js",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/flex/symbols.h",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jsmachines/js/lrparseview.js",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/flex/parser1.cpp",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/flex/SFP1.flex",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/flex/SFP1.ll",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jsmachines/scanner.l",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/flex/raj/src/parser.y",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/flex/raj/src/scanner.l",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/flex/raj/src/lexfile.l",
+		"/Users/ronakshahmac/Dropbox/utd/resume/apply.txt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/makefile",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/.gitignore",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jsmachines/parser.y",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/parser1.cpp",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/sample2.out",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/sample_simple.out",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/parser1.c",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/sample.sfp.out",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/symbols.h",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/SFP.lex",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/all_sols/utdallas.edu/~ilyen/course/compiler/for16s/sample.pt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/all_sols/utdallas.edu/~ilyen/course/compiler/projcode/parser.1",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/all_sols/utdallas.edu/~ilyen/course/compiler/projcode/parser.2",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/sample.sfp",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/parser.cc",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/FP.lex",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/sfp.flex",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/Scanner.java",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jflex-1.6.1/examples/zero-reader/zero-lexer.jflex",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jflex-1.6.1/examples/standalone-maven/src/main/jflex/standalone.flex",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jflex-1.6.1/examples/standalone-maven/src/test/java/de/jflex/example/standalone/SubstTest.java",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jflex-1.6.1/examples/java/java12.cup",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jflex-1.6.1/examples/java/Makefile",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/Makefile",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/TestLexer.java",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jflex-1.6.1/examples/java/Scanner.java",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jflex-1.6.1/examples/java/TestLexer.java",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jflex-1.6.1/examples/java/java.flex",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jflex-1.6.1/examples/java/sym.java",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jflex-1.6.1/examples/zero-reader/README.md",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/jflex-1.6.1/bin/jflex.bat",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/StudentTester.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/Student.java",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/tasks.txt",
+		"/Users/ronakshahmac/Dropbox/utd/resume/Cover_Letter.txt",
+		"/Users/ronakshahmac/Dropbox/utd/aos/ws_new/atn/atn/NetworkDesign.java",
+		"/Users/ronakshahmac/repos/utd_backup_09_11_2015/playground/LCTHW/pointers_handson.c",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj2/pointers.c",
+		"/Users/ronakshahmac/Dropbox/utd/aos/ws_new/atn/atn/FWNetworkTopology.java",
+		"/Users/ronakshahmac/Dropbox/utd/ruby/test_app/test.rb",
+		"/Users/ronakshahmac/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/ronakshahmac/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/ronakshahmac/Dropbox/utd/a150/algs4/algs4/build.gradle",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/Stack.java",
+		"/Applications/XAMPP/xamppfiles/etc/httpd.conf",
+		"/Users/ronakshahmac/Dropbox/utd/a150/algs4/algs4/src/main/java/edu/princeton/cs/algs4/ClosestPair.java",
+		"/Users/ronakshahmac/NetBeansProjects/JavaApplication1/src/ws2/javaAlgo/src/algo/ClosestPair2D.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/BinaryTree.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/SubstringBrut.java",
+		"/Users/ronakshahmac/Dropbox/utd/resume/TestStrings.java",
+		"/Users/ronakshahmac/Dropbox/utd/resume/AnagramNaive.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/HELPER.txt",
+		"/Users/ronakshahmac/Dropbox/utd/ATN/Homeworks/project1/sxs136330_Project1/Source code.txt",
+		"/Users/ronakshahmac/Dropbox/utd/ATN/ronak/Proj1.java",
+		"/Users/ronakshahmac/.bash_profile",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/BinaryTree",
+		"/Users/ronakshahmac/Dropbox/utd/resume/resume.txt",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/LinkedList",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/Final/Inversions.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/BasicIO/StringShuffle.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/CircQueue.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/QTest.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/Queue.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/BasicIO/Template.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/src 2/java/util/HashMap.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/src 2/java/util/ArrayList.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/MergeSort.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/js_workout/merge_sort.js",
+		"/Users/ronakshahmac/NetBeansProjects/JavaApplication1/src/ws2/javaAlgo/src/algo/countInv2.java",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/TestStack.java",
+		"/Volumes/rxs144130/compiler1/readme.txt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj1/p1/readme",
+		"/Volumes/rxs144130/compiler1/readme",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/all_sols/utdallas.edu/~ilyen/course/compiler/for13f/QA-proj1.txt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/all_sols/utdallas.edu/~ilyen/course/compiler/for13f/QA-proj2.txt",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/BitManipulation.java",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj1/output2.txt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj1/output.txt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj1/sample2.fp.txt",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/06m.txt",
+		"/Users/ronakshahmac/Dropbox/utd/a150/proj/06t.txt",
+		"/Users/ronakshahmac/Dropbox/utd/resume/cover2.txt",
+		"/Users/ronakshahmac/Downloads/2D9Y8PTQD7.txt",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj1/output22.txt",
+		"/Users/ronakshahmac/Dropbox/utd/a150/BitManipulation.java",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/proj1/scanner.lex",
+		"/Users/ronakshahmac/Dropbox/utd/compiler/all_sols/utdallas.edu/~ilyen/course/compiler/projcode/cal.lex"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"	",
+			"parseinput",
+			"	",
+			",",
+			"	",
+			"0",
+			"1",
+			"2",
+			"3",
+			"4",
+			"5",
+			"6",
+			"7",
+			"8",
+			"9",
+			"10",
+			"11",
+			"12",
+			"13",
+			"14",
+			"15",
+			"16",
+			"17",
+			"18",
+			"19",
+			"20",
+			"21",
+			"22",
+			"23",
+			"0",
+			"1",
+			"0",
+			"1",
+			"0",
+			"19",
+			"0",
+			"[0-9]?[0-9]",
+			"s",
+			"						\n",
+			"r9",
+			"r8",
+			"r7",
+			"r6",
+			"r5",
+			"r4",
+			"r3",
+			"r2",
+			"r1",
+			"rb",
+			"lb",
+			" ",
+			">",
+			",",
+			" ",
+			"line_counter",
+			"line_co",
+			"line",
+			"yyline",
+			"function parseInput",
+			"parseInput",
+			"LRTable",
+			"LRClosureTable",
+			"1",
+			"is",
+			"return",
+			";",
+			"=",
+			"public static final int",
+			"symbol",
+			"zzBuffer",
+			"zzBufferL",
+			"next_tok",
+			"scanner",
+			"Scanner",
+			"loop",
+			"zzBufferL",
+			"zzCh",
+			"next_token",
+			"printf",
+			"));\n",
+			"StudentVO",
+			"name",
+			" ",
+			"/ /",
+			"node",
+			"Node",
+			"node",
+			"Node",
+			"node",
+			"Node",
+			"node",
+			"\\node\\",
+			"node",
+			"Node",
+			"node",
+			"Node",
+			"node",
+			"Node",
+			"node",
+			"4",
+			"printHeadings",
+			"size",
+			"in",
+			"tmp",
+			"\"",
+			"a",
+			"stackRep",
+			"nElems",
+			"Solutions",
+			"virt",
+			"ssl",
+			"mod_ssl",
+			"ssl",
+			"SSLCertificateFile",
+			"ssl",
+			"Certificate",
+			"CertificateFile",
+			"SSLCertificateFile",
+			"sslcer",
+			"ssl",
+			"session_start",
+			"\n\n",
+			"\n",
+			",",
+			"anisha",
+			"Anisha",
+			"flight",
+			"airline"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\\t",
+			"{0}+1",
+			"trip",
+			"Hide..",
+			"*"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 203.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Java/JavaC.sublime-build",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"sf",
+				"sfp.flex"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 222.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

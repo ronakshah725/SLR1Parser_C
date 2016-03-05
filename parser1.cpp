@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stack>
 #include <iostream>
+#include <stdlib.h>
 
 
 #include "symbols.h"
@@ -111,14 +112,16 @@ void read_table(FILE* fp, char x[row][col]){
             i++;
             p = strtok(NULL,"\t");
         }
+        printf("done");
     }
-    int st, sy; //state and token
-    st = 24, sy = LBRACE;
-    int va = getValueFromMatrix(st, sy);
-    
-    //HELPER extract first char from string
-    printf("First Charecter : (%d,%d)  =  %c\n",st,sy, *x[va]);
-    printf("String : (%d,%d)  =  %s\n",st,sy,x[va]);
+//    int st, sy; //state and token
+//    st = 1, sy = LBRACE;
+//    int va = getValueFromMatrix(st, sy);
+//    
+//    //HELPER extract first char from string
+//    printf("First Charecter : (%d,%d)  =  %c\n",st,sy, *x[va]);
+//    printf("Stringdw : (%d,%d)  =  %s\n",st,sy,x[va]);
+//    printf("Ended");
     
    
 }
@@ -136,54 +139,67 @@ int getSym(char sym){
     return -1;
 }
 
-char*t toString(int x){
-    
-    char t[1];
-    sprintf(t,"%d", x);
-    return t;
-    
-}
 
 /////TODO
 int slr(char x[row][col]){
     
     int accepted = 0;
+    printf("in slr");
     int token = getToken();
     int state = 1;
 
-    s.push(toString(x));
+
+    s.push(to_string(state));
     
     int method = getAction(state, token, x);
-    char* action = getVal(state, token,x);
-    printf("top : %s\n",s.top().c_str());
+    int val = getValueFromMatrix(state, token);
+    string action = "";
+    method = getAction(state, token, x);
+    action = x[val];
     
     
-//    while(){
-//        
-//        if (method==shift){
-//            s.push()
-//            
-//        }
-//        else if (method == reduce){
-//            
-//        }
-//        
-//        //update action
-//        
-//        //update state
-//        
-//        //update token
-//        
-//        
-//        
-//        
-//        
-//    }
-//    
-//    
-//    
-//    //initialize stack to 1st state
-//
+    while(action!="0" && action!="9999"){
+
+        if (method==shift){
+            s.push(to_string(getSym(token)));
+            s.push(to_string(state));
+            token = getToken();
+            
+        }
+        else if (method == reduce){
+            
+            string al = x[val];
+            char first = al[2];
+            char nt = al[0];
+            while(s.top()[0]!=first){
+                s.pop();
+            }
+            s.pop();
+            int gotostate = stoi(s.top());
+            int sy = getSym(nt);
+            int gotoval = getValueFromMatrix(gotostate, sy);
+            s.push(to_string(nt));
+            s.push(x[gotoval]);
+        }
+
+        
+
+        state = stoi(s.top());
+        method = getAction(state, token, x);
+        action = x[val];
+     
+    }
+    
+    if(action=="0")
+        accepted =-1;
+    else if(action=="9999")
+        accepted = 1;
+        
+    
+    
+    
+    //initialize stack to 1st state
+
     
     
     return accepted;
@@ -199,18 +215,8 @@ void print_table_to_console(char x[row][col]){
         }
         printf("\n");
     }
+    printf("done printing");
 }
-
-
-
-void run(char x[row][col], FILE *file)
-{
-    read_table(file,x);
-    print_table_to_console(x);
-    int accepted = slr(x);
-    printf("String parsed : %d",accepted);
-}
-
 void start_parser(void)
 {
     int ntoken;
@@ -225,6 +231,20 @@ void start_parser(void)
     }
     printf("$\nThanks!!");
 }
+
+
+void run(char x[row][col], FILE *file)
+{
+    read_table(file,x);
+    //print_table_to_console(x);
+    printf("String parsed : %d",12);
+    int accepted ;
+    slr(x);
+    
+    
+}
+
+
 
 int main(int argc, char *argv[] )
 {
@@ -245,6 +265,7 @@ int main(int argc, char *argv[] )
         {
 //            start_parser();
             run(x, file);
+
         }
     }
  return 0;
