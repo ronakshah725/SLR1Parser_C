@@ -1,0 +1,11 @@
+{ = d -  123.32  }
+
+
+
+
+{  = c 1 }
+{ = fac 1  }
+{ loop d
+    {   = fac {  * *fac c } }
+   {   = c {+ c-1} }
+} {print fac}

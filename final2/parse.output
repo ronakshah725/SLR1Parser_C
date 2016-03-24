@@ -1,0 +1,278 @@
+						------------TABLE----------
+
+	{	}	l	p	=	f	n	x	$	P	T	S	R	C
+
+
+	4	0	0	0	0	0	0	0	0	0	2	3	0	0
+	
+	0	0	0	0	0	0	0	0	9999	0	0	0	0	0
+	
+	4	T-S	0	0	0	0	0	0	T-S	0	5	3	0	0
+	
+	0	0	7	8	6	0	0	0	0	0	0	0	0	0
+	
+	0	T-ST	0	0	0	0	0	0	T-ST	0	0	0	0	0
+	
+	0	0	0	0	0	0	0	9	0	0	0	0	0	0
+	
+	0	0	0	0	0	0	0	10	0	0	0	0	0	0
+	
+	15	0	0	0	0	0	14	13	0	0	0	0	11	12
+	
+	15	0	0	0	0	0	14	13	0	0	0	0	16	12
+	
+	4	0	0	0	0	0	0	0	0	0	17	3	0	0
+	
+	0	18	0	0	0	0	0	0	0	0	0	0	0	0
+	
+	R-C	R-C	0	0	0	0	R-C	R-C	0	0	0	0	0	0
+	
+	R-x	R-x	0	0	0	0	R-x	R-x	0	0	0	0	0	0
+	
+	R-n	R-n	0	0	0	0	R-n	R-n	0	0	0	0	0	0
+	
+	0	0	0	0	0	19	0	0	0	0	0	0	0	0
+	
+	0	20	0	0	0	0	0	0	0	0	0	0	0	0
+	
+	0	21	0	0	0	0	0	0	0	0	0	0	0	0
+	
+	S-{pR}	S-{pR}	0	0	0	0	0	0	S-{pR}	0	0	0	0	0
+	
+	15	0	0	0	0	0	14	13	0	0	0	0	22	12
+	
+	S-{=xR}	S-{=xR}	0	0	0	0	0	0	S-{=xR}	0	0	0	0	0
+	
+	S-{lxT}	S-{lxT}	0	0	0	0	0	0	S-{lxT}	0	0	0	0	0
+	
+	15	0	0	0	0	0	14	13	0	0	0	0	23	12
+	
+	0	24	0	0	0	0	0	0	0	0	0	0	0	0
+	
+	C-{fRR}	C-{fRR}	0	0	0	0	C-{fRR}	C-{fRR}	0	0	0	0	0	0
+	
+	Push {
+Push s4
+Push =
+Push s6
+Push x
+Push s9
+Push n
+Push s14
+Pop
+Pop
+Push }
+Line : 2
+Line : 3
+Push s20
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Push {
+Push s4
+Push =
+Push s6
+Push x
+Push s9
+Push n
+Push s14
+Pop
+Pop
+Push }
+Line : 4
+Push s20
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Push {
+Push s4
+Push =
+Push s6
+Push x
+Push s9
+Push n
+Push s14
+Pop
+Pop
+Push }
+Line : 5
+Push s20
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Push {
+Push s4
+Push l
+Push s7
+Push x
+Line : 6
+Push s10
+Push {
+Push s4
+Push =
+Push s6
+Push x
+Push s9
+Push {
+Push s15
+Push f
+Push s19
+Push x
+Push s13
+Pop
+Pop
+Push x
+Push s13
+Pop
+Pop
+Push }
+Push s24
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Push }
+Line : 7
+Push s20
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Push {
+Push s4
+Push =
+Push s6
+Push x
+Push s9
+Push {
+Push s15
+Push f
+Push s19
+Push x
+Push s13
+Pop
+Pop
+Push n
+Push s14
+Pop
+Pop
+Push }
+Push s24
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Push }
+Line : 8
+Push s20
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Push }
+Push s21
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Push {
+Push s4
+Push p
+Push s8
+Push x
+Push s13
+Pop
+Pop
+Push }
+Line : 9
+Push s18
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+Pop
+
+Program parsed successfully!!
+
